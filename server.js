@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
+// At the top of your main file or before using environment variables
+require('dotenv').config();
+
 
 // Import routes
 const userRoutes = require('./src/routes/userRoutes');
@@ -29,5 +32,5 @@ app.get('/', (req, res) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8800;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

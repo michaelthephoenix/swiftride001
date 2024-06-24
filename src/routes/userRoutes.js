@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const { registerUser, loginUser } = require('../controllers/UserController');
+const pool = require('../config/db')
 
 // Register route
 router.post('/register', registerUser);
@@ -25,4 +26,4 @@ const queryDatabase = async (queryText) => {
 };
 
 // Example query
-queryDatabase('SELECT * FROM your_table');
+queryDatabase('SELECT * FROM users');
